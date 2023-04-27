@@ -12,18 +12,12 @@ public class Evenement {
     private String codeEvenement ;
     private String eventType ;
     private String eventDetails ;
-    private Date eventDate ;
-   // private String codeAnomalie;
-    @OneToMany
-    private List<Anomalie> anomalies ;
-    @OneToMany
-    private List<Equipement> equipements ;
+    private Date journeytDate ;
+
+    private String codeAnomalie;
     private String libelleStation;
-    @ManyToOne
-    private Station station ;
+    private Number codeEqpt ;
     private String codeVoie;
-    @ManyToOne
-    private Voie voie ;
 
     public Long getId() {
         return id;
@@ -57,28 +51,20 @@ public class Evenement {
         this.eventDetails = eventDetails;
     }
 
-    public Date getEventDate() {
-        return eventDate;
+    public Date getJourneytDate() {
+        return journeytDate;
     }
 
-    public void setEventDate(Date eventDate) {
-        this.eventDate = eventDate;
+    public void setJourneytDate(Date journeytDate) {
+        this.journeytDate = journeytDate;
     }
 
-    public List<Anomalie> getAnomalies() {
-        return anomalies;
+    public String getCodeAnomalie() {
+        return codeAnomalie;
     }
 
-    public void setAnomalies(List<Anomalie> anomalies) {
-        this.anomalies = anomalies;
-    }
-
-    public List<Equipement> getEquipements() {
-        return equipements;
-    }
-
-    public void setEquipements(List<Equipement> equipements) {
-        this.equipements = equipements;
+    public void setCodeAnomalie(String codeAnomalie) {
+        this.codeAnomalie = codeAnomalie;
     }
 
     public String getLibelleStation() {
@@ -89,12 +75,12 @@ public class Evenement {
         this.libelleStation = libelleStation;
     }
 
-    public Station getStation() {
-        return station;
+    public Number getCodeEqpt() {
+        return codeEqpt;
     }
 
-    public void setStation(Station station) {
-        this.station = station;
+    public void setCodeEqpt(Number codeEqpt) {
+        this.codeEqpt = codeEqpt;
     }
 
     public String getCodeVoie() {
@@ -103,13 +89,5 @@ public class Evenement {
 
     public void setCodeVoie(String codeVoie) {
         this.codeVoie = codeVoie;
-    }
-
-    public Voie getVoie() {
-        return voie;
-    }
-
-    public void setVoie(Voie voie) {
-        this.voie = voie;
     }
 }

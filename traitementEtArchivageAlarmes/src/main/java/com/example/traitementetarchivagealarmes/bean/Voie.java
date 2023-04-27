@@ -6,32 +6,32 @@ import jakarta.persistence.*;
 public class Voie {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id ;
-    private String way_code ;
-    private  char way_type_code ;
+    private String wayCode ;
+    private  char wayTypeCode ;
     private int telepeageState ;
 
     public Long getId() {
         return id;
     }
 
+    public String getWayCode() {
+        return wayCode;
+    }
+
+    public void setWayCode(String wayCode) {
+        this.wayCode = wayCode;
+    }
+
+    public char getWayTypeCode() {
+        return wayTypeCode;
+    }
+
+    public void setWayTypeCode(char wayTypeCode) {
+        this.wayTypeCode = wayTypeCode;
+    }
+
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getWay_code() {
-        return way_code;
-    }
-
-    public void setWay_code(String way_code) {
-        this.way_code = way_code;
-    }
-
-    public char getWay_type_code() {
-        return way_type_code;
-    }
-
-    public void setWay_type_code(char way_type_code) {
-        this.way_type_code = way_type_code;
     }
 
     public int getTelepeageState() {
