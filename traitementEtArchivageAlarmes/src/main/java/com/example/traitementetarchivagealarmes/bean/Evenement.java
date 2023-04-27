@@ -9,16 +9,26 @@ import java.util.List;
 public class Evenement {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id ;
-    private String codeEvenement ;
-    private String eventType ;
-    private String eventDetails ;
-    private Date journeytDate ;
-
-    private String codeAnomalie;
-    private String libelleStation;
-    private Number codeEqpt ;
+    private Long idStation;
     private String codeVoie;
-
+    private Date journeytDate ;
+    private String typeVoie;
+    private String messagetype;
+    private String voieOperatonMode;
+    private String telepeayage;
+    private String eventType ;
+    private Number numeroEqpt ;
+    private String codeEvenement ;
+    private String eventDetails ;
+    @ManyToOne
+    private Station station;
+    @ManyToOne
+    private Anomalie anomalie;
+    private String codeAnomalie;
+    @ManyToOne
+    private Equipement eqpt ;
+    @ManyToOne
+    private Voie voie;
     public Long getId() {
         return id;
     }
@@ -55,6 +65,14 @@ public class Evenement {
         return journeytDate;
     }
 
+    public Long getIdStation() {
+        return idStation;
+    }
+
+    public void setIdStation(Long idStation) {
+        this.idStation = idStation;
+    }
+
     public void setJourneytDate(Date journeytDate) {
         this.journeytDate = journeytDate;
     }
@@ -67,20 +85,77 @@ public class Evenement {
         this.codeAnomalie = codeAnomalie;
     }
 
-    public String getLibelleStation() {
-        return libelleStation;
+
+    public String getTypeVoie() {
+        return typeVoie;
     }
 
-    public void setLibelleStation(String libelleStation) {
-        this.libelleStation = libelleStation;
+    public void setTypeVoie(String typeVoie) {
+        this.typeVoie = typeVoie;
     }
 
-    public Number getCodeEqpt() {
-        return codeEqpt;
+    public String getMessagetype() {
+        return messagetype;
     }
 
-    public void setCodeEqpt(Number codeEqpt) {
-        this.codeEqpt = codeEqpt;
+    public void setMessagetype(String messagetype) {
+        this.messagetype = messagetype;
+    }
+
+    public String getVoieOperatonMode() {
+        return voieOperatonMode;
+    }
+
+    public void setVoieOperatonMode(String voieOperatonMode) {
+        this.voieOperatonMode = voieOperatonMode;
+    }
+
+    public String getTelepeayage() {
+        return telepeayage;
+    }
+
+    public void setTelepeayage(String telepeayage) {
+        this.telepeayage = telepeayage;
+    }
+
+    public Number getNumeroEqpt() {
+        return numeroEqpt;
+    }
+
+    public void setNumeroEqpt(Number numeroEqpt) {
+        this.numeroEqpt = numeroEqpt;
+    }
+
+    public Station getStation() {
+        return station;
+    }
+
+    public void setStation(Station station) {
+        this.station = station;
+    }
+
+    public Anomalie getAnomalie() {
+        return anomalie;
+    }
+
+    public void setAnomalie(Anomalie anomalie) {
+        this.anomalie = anomalie;
+    }
+
+    public Equipement getEqpt() {
+        return eqpt;
+    }
+
+    public void setEqpt(Equipement eqpt) {
+        this.eqpt = eqpt;
+    }
+
+    public Voie getVoie() {
+        return voie;
+    }
+
+    public void setVoie(Voie voie) {
+        this.voie = voie;
     }
 
     public String getCodeVoie() {
